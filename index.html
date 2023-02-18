@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="flex-container">
+        <div id="title">Etch-A-Sketch</div>
+        <div id="content">
+            <div id="grid"></div>
+            <input type="color" id="color" value="#000000" oninput="changeColor(this.value)">
+            <input type="range" id="sizeSlider" value="16" min="2" max="64" onchange="changeSize(this.value)"/>
+            <div id="sizeValue">16 x 16</div>
+            <div id="buttons">
+                <button onclick="changeColor('white')">Eraser</button>
+                <button onclick="changeColor('random')">Raibow Mode</button>
+                <button onclick="resetGrid()">Reset</button>
+            </div>            
+        </div>
+        
+    </div>
+    <footer id="footer">
+        <p>Copyright &copy; Yuri Souza</p>
+        <a href="https://github.com/YuriSouzaDev" target="_blank">
+            <i class="fab fa-github" aria-hidden="true"></i></a>
+    </footer>   
+    
+    <script src="./script.js"></script>
+</body>
+</html>
