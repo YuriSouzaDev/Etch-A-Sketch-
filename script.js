@@ -1,7 +1,5 @@
 let color = "black";
-let click = true
-
-let sizeValue = document.querySelector("#sizeValue")
+let click = true;
 
 
 function createGrid(size) { // CREATE A GRID
@@ -13,7 +11,7 @@ function createGrid(size) { // CREATE A GRID
 
     let amount = size * size;
 
-    for (let i = 0; i < amount; i++) { // CREATE A FUNCTION TO COLOR THE EACH DIV
+    for (let i = 0; i < amount; i++) {
         let gridElement = document.createElement("div");
         gridElement.addEventListener('mouseover', colorSquare);
         gridElement.addEventListener('mousedown', colorSquare)
@@ -25,17 +23,17 @@ function createGrid(size) { // CREATE A GRID
 
 createGrid(16);
 
-function changeSize(input) {
+function changeSize(input) { //TO CHANGE THE NUMBER OF DIVS
     createGrid(input);
-    updatesizeValue(size)
+    updatesizeValue(size);
 }
 
-function updatesizeValue(size) {
-    let sizeValue = document.querySelector("#sizeValue")
-    sizeValue.innerHTML = `${size} X ${size}`
+function updatesizeValue(size) { // SHOW HOW MANY DIVS ARE CREATED
+    let sizeValue = document.querySelector("#sizeValue");
+    sizeValue.innerHTML = `${size} X ${size}`;
 }
 
-function colorSquare() {
+function colorSquare() { // RAINBOW MODE
     if(click) {
         if(color === "random") {
             this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
@@ -45,12 +43,12 @@ function colorSquare() {
     }
 }
 
-function changeColor(choice) {
+function changeColor(choice) {// SWITH BETWEEN RAIBOW MODE AND ERASER
     color = choice;
 }
 
 
-function resetGrid() {
+function resetGrid() { // CLEAR THE GRID
     let grid = document.querySelector("#grid");
     let gridElement = grid .querySelectorAll("div");
     gridElement.forEach((div) => div.style.backgroundColor = 'white');
